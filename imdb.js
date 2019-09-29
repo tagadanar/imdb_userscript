@@ -11,12 +11,17 @@
   'use strict';
 
   function getTab(event){
+    	console.log('lol');
       const url = `http://vps588796.ovh.net:5000/movie/add/${event.target.offsetParent.baseURI.split('/')[4]}`;
-      let win = window.open(url);
+    	fetch(url).then(function(response) {
+         console.log(response);
+    	})
+    	/*
+    	let win = window.open(url);
       setTimeout(function(){
           win.close();
       }, 200)
-
+			*/
   }
 
   const div = document.createElement('button');
